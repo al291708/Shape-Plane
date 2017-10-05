@@ -14,7 +14,7 @@ public class CameraScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Vector3 targetPosition = new Vector3 (objetaASeguir.position.x, objetaASeguir.position.y + 3.15f, objetaASeguir.position.z - 5);
+		Vector3 targetPosition = new Vector3 (objetaASeguir.position.x, objetaASeguir.position.y + 3.15f, objetaASeguir.position.z - 15);
 		transform.position = Vector3.Lerp (transform.position, targetPosition, Time.deltaTime * suavidadMovimiento);
 	}
 }
