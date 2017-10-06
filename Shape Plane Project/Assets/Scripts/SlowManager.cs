@@ -20,6 +20,7 @@ public class SlowManager : MonoBehaviour {
 			slowTime -= Time.deltaTime;
 			if(slowTime<0){
 				game.setIsSlow (true);
+                slowTime = 10f;
 		}
 			
 	}

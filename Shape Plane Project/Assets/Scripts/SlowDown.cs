@@ -17,6 +17,7 @@ public class SlowDown : MonoBehaviour {
            
 			Debug.Log ("choque");
 			game.setIsSlow (false);
+            
 
         }
     }

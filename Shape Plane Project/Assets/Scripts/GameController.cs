@@ -52,6 +52,7 @@ public class GameController : MonoBehaviour {
 				else if(isSlow==false)
                 {
                     walls[0].transform.position += new Vector3(0, 0, -0.1f);
+                   
                 }
 
                 if (powerUps[0].activeSelf)
@@ -98,6 +99,11 @@ public class GameController : MonoBehaviour {
 	public bool getIsSlow(){
 		return isSlow;
 	}
+
+    public List<GameObject> getPowerUps()
+    {
+        return powerUps;
+    }
 
 
     
