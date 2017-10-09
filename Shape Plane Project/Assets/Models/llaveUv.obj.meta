@@ -1,17 +1,17 @@
 fileFormatVersion: 2
-guid: 21ae5c9912a822d4a80f0fe04c8ceee3
-timeCreated: 1507232012
+guid: db9d1e9a711f5434f87f9f73876a4a36
+timeCreated: 1507543858
 licenseType: Free
 ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
-    100000: pPlane2
+    100000: Cube
     100002: //RootNode
-    400000: pPlane2
+    400000: Cube
     400002: //RootNode
-    2300000: pPlane2
-    3300000: pPlane2
-    4300000: pPlane2
+    2300000: Cube
+    3300000: Cube
+    4300000: Cube
   materials:
     importMaterials: 1
     materialName: 0

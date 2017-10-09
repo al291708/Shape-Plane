@@ -29,3 +29,6 @@ D:\Jonan\Documents\Unity Projects\Shape Plane\Temp\bin\Debug\UnityEngine.HoloLen
 D:\Jonan\Documents\Unity Projects\Shape Plane\Temp\bin\Debug\UnityEngine.VR.xml
 D:\Jonan\Documents\Unity Projects\Shape Plane\obj\Debug\Assembly-CSharp.dll
 D:\Jonan\Documents\Unity Projects\Shape Plane\obj\Debug\Assembly-CSharp.pdb
+C:\Users\shado\Documents\GitHub\Shape-Plane\Shape Plane Project\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
+C:\Users\shado\Documents\GitHub\Shape-Plane\Shape Plane Project\obj\Debug\Assembly-CSharp.dll
+C:\Users\shado\Documents\GitHub\Shape-Plane\Shape Plane Project\obj\Debug\Assembly-CSharp.pdb
