@@ -34,9 +34,13 @@ public class SlowDown : MonoBehaviour {
             {
 
                 Debug.Log("vida");
-                plane.addLife(1);
+                if (plane.currentLifes >= 0 && plane.currentLifes < 3)
+                {
+                    plane.addLife(1); timeLife = 2f;
+                    timeLife = 2f;
+                }
                 Debug.Log(plane.currentLifes);
-                timeLife = 2f;
+                
             }
         
         }
