@@ -29,7 +29,7 @@ public class SlowManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-        if (plane.GetComponent<ToyPlane>().getLifes() > 0 && !GetComponent<PauseMenuScript>().isGamePaused())
+        if (plane.GetComponent<ToyPlane>().isAlive() && !GetComponent<PauseMenuScript>().isGamePaused())
         {
             if (nextPowerUp == 0)
             {

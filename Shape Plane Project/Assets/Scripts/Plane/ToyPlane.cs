@@ -34,6 +34,11 @@ public class ToyPlane : MonoBehaviour {
         lifes = newLife;
     }
 
+    public bool isAlive()
+    {
+        return (lifes > 0);
+    }
+
     //Slow code
     public bool getIsSlow()
     {
