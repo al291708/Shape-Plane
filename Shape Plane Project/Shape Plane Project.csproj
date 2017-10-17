@@ -127,6 +127,7 @@
     <Compile Include="Assets\PostProcessing\Runtime\Utils\RenderTextureFactory.cs" />
     <Compile Include="Assets\PostProcessing\Utilities\CustomMotionTexture\ExampleWheelController.cs" />
     <Compile Include="Assets\Scripts\Explosion.cs" />
+    <Compile Include="Assets\Scripts\GameController\CloudManager.cs" />
     <Compile Include="Assets\Scripts\GameController\SlowManager.cs" />
     <Compile Include="Assets\Scripts\GameController\WallManager.cs" />
     <Compile Include="Assets\Scripts\Menus\PauseMenuScript.cs" />
