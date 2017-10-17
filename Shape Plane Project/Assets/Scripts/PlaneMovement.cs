@@ -28,7 +28,7 @@ public class PlaneMovement : MonoBehaviour {
 
 		//Modificamos la rotacion
 		if (transform.rotation.z > -0.57f && transform.rotation.z < 0.57f) {
-			transform.Rotate (Vector3.forward * Input.GetAxis ("Horizontal1") * rotationSpeed);
+			transform.Rotate (Vector3.forward * Input.GetAxis ("Vertical1") * rotationSpeed);
 		} else {
 			if (transform.localRotation.z < -0.57f) {
 				transform.Rotate (Vector3.forward * 1.001f);
@@ -42,7 +42,7 @@ public class PlaneMovement : MonoBehaviour {
 		//transform.Rotate(Vector3.forward * Input.GetAxis ("Horizontal1") * rotationSpeed);
 
 		if (transform.rotation.x > -0.57f && transform.rotation.x < 0.57f) {
-			transform.Rotate (Vector3.right * Input.GetAxis ("Vertical1") * rotationSpeed);
+			transform.Rotate (Vector3.right * Input.GetAxis ("Horizontal1") * rotationSpeed);
 		} else {
 			if (transform.localRotation.x < -0.57f) {
 				transform.Rotate (Vector3.right * 1.001f);

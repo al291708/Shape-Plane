@@ -10,6 +10,7 @@ public class GameController : MonoBehaviour {
     public List<GameObject> powerUpTypes;
     public Transform camara;
     private bool isAlive = true;
+    bool isSlow = true;
 
     private int nextPowerUp;
     
@@ -32,7 +33,7 @@ public class GameController : MonoBehaviour {
             {
                 if (powerUps[0].transform.position.z > camara.position.z)
                 {
-                    powerUps[0].transform.position += new Vector3(0, 0, -1);
+                    powerUps[0].transform.position += new Vector3(0, 0, -0.2f);
                 } else
                 {
                     Destroy(powerUps[0]);
@@ -43,10 +44,20 @@ public class GameController : MonoBehaviour {
 
             if (walls[0].transform.position.z > camara.position.z )
             {
-                walls[0].transform.position += new Vector3(0, 0, -1);
+                if (isSlow==true)
+                {
+					
+                    walls[0].transform.position += new Vector3(0, 0, -1);
+                }
+				else if(isSlow==false)
+                {
+                    walls[0].transform.position += new Vector3(0, 0, -0.1f);
+                   
+                }
+
                 if (powerUps[0].activeSelf)
                 {
-                    powerUps[0].transform.position += new Vector3(0, 0, -1);
+                    powerUps[0].transform.position += new Vector3(0, 0, -0.2f);
                 }
             } else {
                 Destroy(walls[0]);
@@ -81,4 +92,19 @@ public class GameController : MonoBehaviour {
         randomPowerUp.SetActive(false);
         powerUps.Add(randomPowerUp);
     }
+    public void setIsSlow(bool slow)
+    {
+        isSlow = slow;
+    }
+	public bool getIsSlow(){
+		return isSlow;
+	}
+
+    public List<GameObject> getPowerUps()
+    {
+        return powerUps;
+    }
+
+
+    
 }
