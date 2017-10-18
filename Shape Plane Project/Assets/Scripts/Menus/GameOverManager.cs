@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameOverManager : MonoBehaviour {
 
 	public ToyPlane planeLifes;
 	public float restarDelay = 5f;
+
 
 	Animator anim;
 	float restartTime;
@@ -14,6 +16,7 @@ public class GameOverManager : MonoBehaviour {
 	void Awake () {
 		
 		anim = GetComponent <Animator> ();
+
 	}
 	
 	// Update is called once per frame
@@ -21,6 +24,7 @@ public class GameOverManager : MonoBehaviour {
 
 		if (planeLifes.isAlive() == false) {
 		
+
 			anim.SetTrigger ("GameOver");
 
 
