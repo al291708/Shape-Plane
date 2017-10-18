@@ -18,7 +18,7 @@ public class Collisions : MonoBehaviour {
     {
         if (other.gameObject.tag == "Wall")
         {
-            Debug.Log("Collisions Script: Choqua pared");
+            //Debug.Log("Collisions Script: Choqua pared");
             Collider[] colliders = other.gameObject.GetComponents<Collider>();
 
             foreach (Collider c in colliders)
@@ -40,11 +40,14 @@ public class Collisions : MonoBehaviour {
                 plane.takeALife();
                 GetComponentInChildren<changeSmoke>().updateSmoke(plane.getLifes());
             }
+
+            other.gameObject.GetComponentInChildren<wallMaterials>().changeToBadTransparent();
+            other.gameObject.GetComponentInChildren<wallSounds>().playHitWallSound();
         }
 
         if (other.gameObject.tag == "CenterOfWall")
         {
-            Debug.Log("Collisions Script: Choqua centro muro");
+            //Debug.Log("Collisions Script: Choqua centro muro");
             Collider[] colliders = other.gameObject.GetComponents<Collider>();
 
             foreach (Collider c in colliders)
@@ -61,6 +64,10 @@ public class Collisions : MonoBehaviour {
 
 
             gameController.GetComponent<SumarPuntos>().sumaPuntos(10);
+
+            other.gameObject.transform.parent.GetComponentInChildren<wallMaterials>().changeToGoodTransparent();
+            other.gameObject.transform.parent.GetComponentInChildren<wallSounds>().playPassWallSound();
+
 
         }
 

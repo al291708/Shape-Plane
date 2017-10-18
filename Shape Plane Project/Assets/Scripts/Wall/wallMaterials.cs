@@ -5,11 +5,17 @@ using UnityEngine;
 public class wallMaterials : MonoBehaviour {
 
     public Material opaque;
-    public Material transparent;
+    public Material goodTransparent;
+    public Material badTransparent;
 
-    public void changeToTransparent()
+    public void changeToGoodTransparent()
     {
-        GetComponent<MeshRenderer>().material = transparent;
+        GetComponent<MeshRenderer>().material = goodTransparent;
+    }
+
+    public void changeToBadTransparent()
+    {
+        GetComponent<MeshRenderer>().material = badTransparent;
     }
 
     public void changeToOpaque()

@@ -14,8 +14,8 @@ public class PlaneMovement : MonoBehaviour {
 	void Start () {
 		Desplazamiento = new Vector3 (0, 0, 0);
         
-    rotationSpeed = 1.55f;
-    velocidad = 0.4f;
+        rotationSpeed = 1.55f;
+        velocidad = 0.4f;
 }
 	
 	// Update is called once per frame

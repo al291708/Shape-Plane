@@ -41,7 +41,7 @@ public class SlowManager : MonoBehaviour {
 
             if (powerUpInstanciates[0].activeSelf)
             {
-                powerUpInstanciates[0].transform.position += new Vector3(0, 0, -0.5f);
+                powerUpInstanciates[0].transform.position += new Vector3(0, 0, -0.8f);
             }
 
             if (powerUpInstanciates[0].transform.position.z < camera.transform.position.z)
@@ -67,7 +67,7 @@ public class SlowManager : MonoBehaviour {
     void instantiateRandomPowerUp()
     {
         int randomPowerUpTypeIndex = Random.Range(0, powerUpTypes.Count);
-        GameObject PU = Instantiate(powerUpTypes[randomPowerUpTypeIndex], new Vector3(0, 0, 150), Quaternion.identity) as GameObject;
+        GameObject PU = Instantiate(powerUpTypes[randomPowerUpTypeIndex], new Vector3(0, 0, 75), Quaternion.identity) as GameObject;
         PU.SetActive(false);
         powerUpInstanciates.Add(PU);
     }

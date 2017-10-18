@@ -4,24 +4,18 @@ using UnityEngine;
 using System.IO.Ports;
 
 public class MovementArduino : MonoBehaviour {
-    private SerialPort _streamMove; // Objeto de la clase SerialPort
-    private SerialPort _streamRotate; // Objeto de la clase SerialPort
-
-    private string _readValueMove; // Variable para guardar lo que se lea del puerto serie
-    private string _readValueRotate; // Variable para guardar lo que se lea del puerto serie
-
+    
 
     // Use this for initialization
     void Start()
     {
-        string[] portNames = SerialPort.GetPortNames();
-        
+        /*string[] portNames = SerialPort.GetPortNames();
+
         if (portNames.Length >= 2)
         {
             _streamMove = new SerialPort(portNames[portNames.Length - 2], 9600);
             _streamRotate = new SerialPort(portNames[portNames.Length - 1], 9600);
-
-            _readValueMove = "";
+                       _readValueMove = "";
             _readValueRotate = "";
 
 
@@ -30,8 +24,13 @@ public class MovementArduino : MonoBehaviour {
 
 
             StartCoroutine("move", 0.05f);
-            StartCoroutine("rotate", 0.05f);
-        }
+            StartCoroutine("rotate", 0.05f);*/
+            
+        //}
+        StartCoroutine("move", 0.05f);
+        StartCoroutine("rotate", 0.05f);
+
+
 
     }
 
@@ -42,14 +41,15 @@ public class MovementArduino : MonoBehaviour {
         while (GetComponent<ToyPlane>().getLifes() > 0)
         {
             yield return new WaitForSeconds(time);
-
-            _readValueMove = _streamMove.ReadLine();
-            mueve(_readValueMove);
+            if (!GameObject.FindGameObjectWithTag("GameController").GetComponent<PauseMenuScript>().isGamePaused())
+            {
+                transform.position = GetComponent<ArduinoThreadMovoment>().getPosition();
+            }
 
         }
 
         Debug.Log("Cierre puerto movimiento");
-        _streamMove.Close();
+        GetComponent<ArduinoThreadMovoment>().closeMovePort();
 
     }
 
@@ -61,43 +61,15 @@ public class MovementArduino : MonoBehaviour {
         {
             yield return new WaitForSeconds(time);
 
-            _readValueRotate = _streamRotate.ReadLine();
-            rota(_readValueRotate);
-
+            if (!GameObject.FindGameObjectWithTag("GameController").GetComponent<PauseMenuScript>().isGamePaused())
+            {
+                transform.eulerAngles = GetComponent<ArduinoThreadMovoment>().getAngle();
+            }
         }
 
         Debug.Log("Cierre puerto rotacion");
-        _streamRotate.Close();
+        GetComponent<ArduinoThreadMovoment>().closeRotatePort();
+
 
     }
-
-    void rota(string _readValue)
-    {
-        if (!GameObject.FindGameObjectWithTag("GameController").GetComponent<PauseMenuScript>().isGamePaused())
-        {
-            string[] values = _readValue.Split('/');
-
-
-            if (values[2] != "-1")
-            {
-                transform.eulerAngles = new Vector3(float.Parse(values[4]), -90f, -1 * float.Parse(values[3]));
-            }
-        }
-
-    }
-
-    void mueve(string _readValue)
-    {
-        if (!GameObject.FindGameObjectWithTag("GameController").GetComponent<PauseMenuScript>().isGamePaused())
-        {
-            string[] values = _readValue.Split('/');
-
-
-            if (values[2] != "-1")
-            {
-                transform.position = new Vector3(float.Parse(values[4]) * -0.2f, -1 * float.Parse(values[3]) * 0.1f, 0);
-            }
-        }
-    }
-
 }
