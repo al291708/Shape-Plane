@@ -42,13 +42,16 @@ public class ArduinoThreadMovoment : MonoBehaviour {
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (portNames.Length >= 2)
         {
-            Debug.Log("CIERRE PUERTOS");
-            _streamMove.Close();
-            threadMove.Abort();
-            _streamRotate.Close();
-            threadRotate.Abort();
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Debug.Log("CIERRE PUERTOS");
+                _streamMove.Close();
+                threadMove.Abort();
+                _streamRotate.Close();
+                threadRotate.Abort();
+            }
         }
     }
 
@@ -59,6 +62,8 @@ public class ArduinoThreadMovoment : MonoBehaviour {
 
         while (threadMove.IsAlive)
         {
+            Debug.Log("lee");
+
             string _readValueMove = _streamMove.ReadLine();
 
             mueve(_readValueMove);
@@ -126,5 +131,10 @@ public class ArduinoThreadMovoment : MonoBehaviour {
     {
         _streamRotate.Close();
         threadRotate.Abort();
+    }
+
+    public string[] getPortNames()
+    {
+        return portNames;
     }
 }

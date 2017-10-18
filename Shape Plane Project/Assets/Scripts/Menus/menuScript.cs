@@ -36,8 +36,16 @@ public class menuScript : MonoBehaviour {
 
     public void StartMapScene()
     {
+        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
         Debug.Log("Empieza ingame");
         SceneManager.LoadScene("ingame");
+    }
+
+    public void StarIntroScene()
+    {
+        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
+
+        SceneManager.LoadScene("Intro");
     }
 
     public void ExitGame()

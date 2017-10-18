@@ -9,26 +9,24 @@ public class MovementArduino : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        /*string[] portNames = SerialPort.GetPortNames();
+        string[] portNames = SerialPort.GetPortNames();
 
         if (portNames.Length >= 2)
         {
-            _streamMove = new SerialPort(portNames[portNames.Length - 2], 9600);
+            /*_streamMove = new SerialPort(portNames[portNames.Length - 2], 9600);
             _streamRotate = new SerialPort(portNames[portNames.Length - 1], 9600);
                        _readValueMove = "";
             _readValueRotate = "";
 
 
             _streamMove.Open();
-            _streamRotate.Open();
+            _streamRotate.Open();*/
 
 
             StartCoroutine("move", 0.05f);
-            StartCoroutine("rotate", 0.05f);*/
+            StartCoroutine("rotate", 0.05f);
             
-        //}
-        StartCoroutine("move", 0.05f);
-        StartCoroutine("rotate", 0.05f);
+        }
 
 
 

@@ -13,18 +13,21 @@ public class PauseMenuScript : MonoBehaviour
     void Start()
     {
         isPaused = false;
-
-        pauseMenu = pauseMenu.GetComponent<Canvas>();
+        
         pauseMenu.enabled = false;
     }
 
     public void OpenPauseMenu()
     {
+        Debug.Log("open Pause");
+
         pauseMenu.enabled = true;
     }
 
     public void ClosePauseMenu()
     {
+        Debug.Log("close pause");
+
         pauseMenu.enabled = false;
     }
 
@@ -36,6 +39,14 @@ public class PauseMenuScript : MonoBehaviour
 
     public void GoToIntroScene()
     {
+        if(GameObject.FindGameObjectWithTag("Player").GetComponent<ArduinoThreadMovoment>().getPortNames().Length >= 2)
+        {
+            GameObject.FindGameObjectWithTag("Player").GetComponent<ArduinoThreadMovoment>().closeMovePort();
+            GameObject.FindGameObjectWithTag("Player").GetComponent<ArduinoThreadMovoment>().closeRotatePort();
+        }
+
+        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
+
         SceneManager.LoadScene("Intro");
     }
 

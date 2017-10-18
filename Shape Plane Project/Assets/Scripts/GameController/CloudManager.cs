@@ -11,10 +11,13 @@ public class CloudManager : MonoBehaviour {
 
 	private GameObject plane;
 	private GameObject camera;
+    private GameObject gameController;
+
 	// Use this for initialization
 	void Start () {
 		plane = GameObject.FindGameObjectWithTag ("Player");
 		camera = GameObject.FindGameObjectWithTag ("MainCamera");
+        gameController = GameObject.FindGameObjectWithTag("GameController");
 
 		for (int i = 0; i < 2; i++)
 		{
@@ -29,7 +32,7 @@ public class CloudManager : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 
-		if (plane.GetComponent<ToyPlane> ().isAlive () /*&& !GetComponent<PauseMenuScript> ().isGamePaused ()*/) {
+		if (plane.GetComponent<ToyPlane>().isAlive () && !gameController.GetComponent<PauseMenuScript>().isGamePaused ()) {
 			if (clouds [0].transform.position.z > camera.transform.position.z) {
 				clouds [0].transform.position += new Vector3 (0, 0,speed);
 			} else {
