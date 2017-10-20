@@ -148,6 +148,7 @@
     <Compile Include="Assets\Scripts\Plane\PlaneMovement.cs" />
     <Compile Include="Assets\Scripts\Plane\ToyPlane.cs" />
     <Compile Include="Assets\Scripts\Plane\changeSmoke.cs" />
+    <Compile Include="Assets\Scripts\Plane\takeTenPoints.cs" />
     <Compile Include="Assets\Scripts\PowerUps\LightController.cs" />
     <Compile Include="Assets\Scripts\SlowDown.cs" />
     <Compile Include="Assets\Scripts\Wall\wallMaterials.cs" />

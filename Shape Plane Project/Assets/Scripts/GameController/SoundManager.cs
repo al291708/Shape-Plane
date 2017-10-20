@@ -24,7 +24,7 @@ public class SoundManager : MonoBehaviour {
         {
             StartCoroutine("downPitch");
             isChangePitch = true;
-            Debug.Log("bajo");
+            //Debug.Log("bajo");
 
         }
         if (!plane.GetComponent<ToyPlane>().getIsSlow() && isChangePitch == false)
