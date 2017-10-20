@@ -34,6 +34,14 @@ public class WallManager : MonoBehaviour {
         {
             if (walls[0].transform.position.z > camera.transform.position.z)
             {
+                if(walls[0].transform.position.z < plane.transform.position.z)
+                {
+                    if (!walls[0].GetComponentInChildren<wallMaterials>().getIsTransparent())
+                    {
+                        walls[0].GetComponentInChildren<wallMaterials>().changeToBadTransparent();
+                    }
+                }
+
                 if (plane.GetComponent<ToyPlane>().getIsSlow())
                 {
                     walls[0].transform.position += new Vector3(0, 0, -0.4f);

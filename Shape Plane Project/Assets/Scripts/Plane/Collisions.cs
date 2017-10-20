@@ -74,14 +74,23 @@ public class Collisions : MonoBehaviour {
         if (other.transform.tag == "Slow")
         {
             Debug.Log("Collisions Script: coje Slow");
+        
+
+            other.gameObject.SetActive(false);
+
             plane.setIsSlow(true);
         }
 
         if (other.transform.tag == "Life")
         {
-            if(plane.getLifes() < 3)
+
+            other.gameObject.SetActive(false);
+
+
+            if (plane.getLifes() < 3)
             {
                 Debug.Log("Collisions Script: coje Life");
+
                 plane.addALife();
                 GetComponentInChildren<changeSmoke>().updateSmoke(plane.getLifes());
             }    

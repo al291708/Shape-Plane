@@ -19,9 +19,8 @@ public class SoundManager : MonoBehaviour {
     // Update is called once per frame
     void Update () {
 
-        Debug.Log(plane.GetComponent<ToyPlane>().getIsSlow() + " && " + isChangePitch);
-            ;
-            if (plane.GetComponent<ToyPlane>().getIsSlow() && isChangePitch == false)
+        //Debug.Log(plane.GetComponent<ToyPlane>().getIsSlow() + " && " + isChangePitch);
+        if (plane.GetComponent<ToyPlane>().getIsSlow() && isChangePitch == false)
         {
             StartCoroutine("downPitch");
             isChangePitch = true;
@@ -32,7 +31,6 @@ public class SoundManager : MonoBehaviour {
         {
             StartCoroutine("upPitch");
             isChangePitch = true;
-            Debug.Log("subo");
         }
 
     }
