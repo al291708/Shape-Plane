@@ -9,8 +9,6 @@ public class SlowDown : MonoBehaviour {
 	public Animator animacion;
 	float time;
     float timeLife;
-
-	bool vivo = true;
     
 	public GameObject explosionParticula;
 

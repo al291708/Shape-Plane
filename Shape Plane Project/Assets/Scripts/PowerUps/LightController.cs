@@ -11,14 +11,10 @@ public class LightController : MonoBehaviour {
 
     float time;
 
-    bool isIncrease;
-
 	// Use this for initialization
 	void Start () {
         light = GetComponentInChildren<Light>();
         light.range = minRange;
-
-        isIncrease = true;
 
         time = 0;
     }

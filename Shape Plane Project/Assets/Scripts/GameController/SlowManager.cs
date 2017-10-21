@@ -14,6 +14,8 @@ public class SlowManager : MonoBehaviour {
 
     public int nextPowerUp;
 
+    private float velocity;
+
     void Start () {
         plane = GameObject.FindGameObjectWithTag("Player");
         camera = GameObject.FindGameObjectWithTag("MainCamera");
@@ -22,6 +24,7 @@ public class SlowManager : MonoBehaviour {
         {
             instantiateRandomPowerUp();
         }
+        velocity = 0.8f;
 
         slowTime = 5f;
         nextPowerUp = Random.Range(2, 5);
@@ -41,7 +44,13 @@ public class SlowManager : MonoBehaviour {
 
             if (powerUpInstanciates[0].activeSelf)
             {
-                powerUpInstanciates[0].transform.position += new Vector3(0, 0, -0.8f);
+                powerUpInstanciates[0].transform.position += new Vector3(0, 0, -velocity);
+
+                if (powerUpInstanciates[0].transform.position.z < plane.transform.position.z - 10f)
+                {
+                    powerUpInstanciates[0].GetComponent<PowerUpsMaterial>().makeTransparent();
+                }
+
             }
 
             if (powerUpInstanciates[0].transform.position.z < camera.transform.position.z)
@@ -80,5 +89,10 @@ public class SlowManager : MonoBehaviour {
     public void setNextPowerUps(int n)
     {
         nextPowerUp = n;
+    }
+
+    public float getVelocity()
+    {
+        return velocity;
     }
 }

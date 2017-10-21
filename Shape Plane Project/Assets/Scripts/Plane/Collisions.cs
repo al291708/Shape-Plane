@@ -72,6 +72,9 @@ public class Collisions : MonoBehaviour {
 
         if (other.transform.tag == "Slow")
         {
+            
+            other.gameObject.GetComponent<PowerUpsParticles>().showParticles();
+
             other.gameObject.SetActive(false);
 
             plane.setIsSlow(true);
@@ -80,8 +83,9 @@ public class Collisions : MonoBehaviour {
         if (other.transform.tag == "Life")
         {
 
-            other.gameObject.SetActive(false);
+            other.gameObject.GetComponent<PowerUpsParticles>().showParticles();
 
+            other.gameObject.SetActive(false);
 
             if (plane.getLifes() < 3)
             {
