@@ -2,17 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class takeTenPoints : MonoBehaviour {
-
+public class ExtraPoints : MonoBehaviour {
     private int initFontSize;
     private int finalFontSize;
 
     private bool isVisible;
 
+    private string plusTenText;
+    private string minusTenText;
+
     private void Start()
     {
         initFontSize = 16;
         finalFontSize = 145;
+
+        plusTenText = "+ 10";
+        minusTenText = "- 10";
+
 
         resetValues();
     }
@@ -28,9 +34,18 @@ public class takeTenPoints : MonoBehaviour {
     public void takeWall()
     {
         GetComponent<MeshRenderer>().enabled = true;
+        GetComponent<TextMesh>().text = plusTenText;
         isVisible = true;
         StartCoroutine("increaseFontSize");
 
+    }
+
+    public void hitWall()
+    {
+        GetComponent<MeshRenderer>().enabled = true;
+        GetComponent<TextMesh>().text = minusTenText;
+        isVisible = true;
+        StartCoroutine("increaseFontSize");
     }
 
     IEnumerator increaseFontSize()
@@ -50,6 +65,7 @@ public class takeTenPoints : MonoBehaviour {
     {
         GetComponent<TextMesh>().fontSize = initFontSize;
         GetComponent<MeshRenderer>().enabled = false;
+        GetComponent<TextMesh>().text = "";
 
         isVisible = false;
     }

@@ -40,8 +40,13 @@ public class Collisions : MonoBehaviour {
                 GetComponentInChildren<changeSmoke>().updateSmoke(plane.getLifes());
             }
 
+            gameController.GetComponent<ExtraPuntos>().restaPuntos(10);
+
             other.gameObject.GetComponentInChildren<wallMaterials>().changeToBadTransparent();
             other.gameObject.GetComponentInChildren<wallSounds>().playHitWallSound();
+
+            GetComponentInChildren<ExtraPoints>().hitWall();
+
         }
 
         if (other.gameObject.tag == "CenterOfWall")
@@ -61,12 +66,12 @@ public class Collisions : MonoBehaviour {
             }
 
 
-            gameController.GetComponent<SumarPuntos>().sumaPuntos(10);
+            gameController.GetComponent<ExtraPuntos>().sumaPuntos(10);
 
             other.gameObject.transform.parent.GetComponentInChildren<wallMaterials>().changeToGoodTransparent();
             other.gameObject.transform.parent.GetComponentInChildren<wallSounds>().playPassWallSound();
 
-            GetComponentInChildren<takeTenPoints>().takeWall();
+            GetComponentInChildren<ExtraPoints>().takeWall();
 
         }
 

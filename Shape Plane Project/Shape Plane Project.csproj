@@ -73,6 +73,12 @@
     <Reference Include="UnityEditor">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+      <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Common">
+      <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Common.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Shape Plane Project.Plugins.csproj">
@@ -131,18 +137,18 @@
     <Compile Include="Assets\Scripts\GameController\SlowManager.cs" />
     <Compile Include="Assets\Scripts\GameController\SoundManager.cs" />
     <Compile Include="Assets\Scripts\GameController\WallManager.cs" />
+    <Compile Include="Assets\Scripts\Menus\ExtraPuntos.cs" />
     <Compile Include="Assets\Scripts\Menus\GameOverManager.cs" />
     <Compile Include="Assets\Scripts\Menus\PauseMenuScript.cs" />
-    <Compile Include="Assets\Scripts\Menus\SumarPuntos.cs" />
     <Compile Include="Assets\Scripts\Menus\menuScript.cs" />
     <Compile Include="Assets\Scripts\Plane\ArduinoThreadMovoment.cs" />
     <Compile Include="Assets\Scripts\Plane\Collisions.cs" />
+    <Compile Include="Assets\Scripts\Plane\ExtraPoints.cs" />
     <Compile Include="Assets\Scripts\Plane\GameOverAnimation.cs" />
     <Compile Include="Assets\Scripts\Plane\MovementArduino.cs" />
     <Compile Include="Assets\Scripts\Plane\PlaneMovement.cs" />
     <Compile Include="Assets\Scripts\Plane\ToyPlane.cs" />
     <Compile Include="Assets\Scripts\Plane\changeSmoke.cs" />
-    <Compile Include="Assets\Scripts\Plane\takeTenPoints.cs" />
     <Compile Include="Assets\Scripts\PowerUps\LightController.cs" />
     <Compile Include="Assets\Scripts\PowerUps\ParticleMovement.cs" />
     <Compile Include="Assets\Scripts\PowerUps\PowerUpsMaterial.cs" />
