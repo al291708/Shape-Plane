@@ -12,12 +12,24 @@ public class WallManager : MonoBehaviour {
 
     private float ratioOfSpawnWall;
 
+    private float velocityInitial;
+    private float velocity;
+
+    private int countToAddVelocity;
+    private int maxWallsToAddValocity;
+
     // Use this for initialization
     void Start () {
         plane = GameObject.FindGameObjectWithTag("Player");
         camera = GameObject.FindGameObjectWithTag("MainCamera");
 
         ratioOfSpawnWall = 7f;
+
+        velocityInitial = 0.8f;
+        velocity = velocityInitial;
+
+        countToAddVelocity = 0;
+        maxWallsToAddValocity = 3;
 
         for (int i = 0; i < 2; i++)
         {
@@ -44,11 +56,11 @@ public class WallManager : MonoBehaviour {
 
                 if (plane.GetComponent<ToyPlane>().getIsSlow())
                 {
-                    walls[0].transform.position += new Vector3(0, 0, -0.4f);
+                    walls[0].transform.position += new Vector3(0, 0, -velocity/2);
                 }
                 else
                 {
-                    walls[0].transform.position += new Vector3(0, 0, -0.8f);
+                    walls[0].transform.position += new Vector3(0, 0, -velocity);
 
                 }
             }else {
@@ -57,6 +69,13 @@ public class WallManager : MonoBehaviour {
                 walls[0].SetActive(true);
 
                 GetComponent<SlowManager>().setNextPowerUps(GetComponent<SlowManager>().getNextPowerUps() - 1);
+
+                countToAddVelocity++;
+
+                if(countToAddVelocity == maxWallsToAddValocity)
+                {
+                    addVelocity();
+                }
 
                 instantiateRandomWall();
             }
@@ -80,5 +99,15 @@ public class WallManager : MonoBehaviour {
         
         return new Vector3(Mathf.Sin(angle) * disCenterRdn, Mathf.Cos(angle) * disCenterRdn, 150f);
     }
-    
+
+    private void addVelocity()
+    {
+        countToAddVelocity = 0;
+
+        velocity += 0.1f;
+
+        Debug.Log(velocity);
+    }
+
+
 }
