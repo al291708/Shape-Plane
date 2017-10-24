@@ -9,6 +9,7 @@ public class GameOverAnimation : MonoBehaviour {
 
     public GameObject explosionParticula;
 
+
     public void Update()
     {
         if(GetComponent<ToyPlane>().getLifes() <= 0)
