@@ -10,17 +10,27 @@ public class PlaneMovement : MonoBehaviour {
 	private float rotationSpeed;
 	private float velocidad;
 
+    private bool isDie;
+
 	// Use this for initialization
 	void Start () {
 		Desplazamiento = new Vector3 (0, 0, 0);
         
         rotationSpeed = 1.55f;
         velocidad = 0.4f;
-}
+
+        isDie = false;
+    }
 	
 	// Update is called once per frame
 	void Update () {
-		RecogerInformacion ();
+        if(GetComponent<ToyPlane>().getLifes() > 0)
+        {
+            RecogerInformacion();
+        }else
+        {
+            GetComponent<Die>().die();
+        }
 	}
 
 	void RecogerInformacion(){

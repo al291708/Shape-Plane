@@ -144,6 +144,7 @@
     <Compile Include="Assets\Scripts\Plane\ArduinoThreadMovoment.cs" />
     <Compile Include="Assets\Scripts\Plane\ClockSounds.cs" />
     <Compile Include="Assets\Scripts\Plane\Collisions.cs" />
+    <Compile Include="Assets\Scripts\Plane\Die.cs" />
     <Compile Include="Assets\Scripts\Plane\ExtraPoints.cs" />
     <Compile Include="Assets\Scripts\Plane\GameOverAnimation.cs" />
     <Compile Include="Assets\Scripts\Plane\LlaveSounds.cs" />

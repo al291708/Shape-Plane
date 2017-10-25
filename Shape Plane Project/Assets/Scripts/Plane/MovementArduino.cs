@@ -48,6 +48,7 @@ public class MovementArduino : MonoBehaviour {
 
         Debug.Log("Cierre puerto movimiento");
         GetComponent<ArduinoThreadMovoment>().closeMovePort();
+        GetComponent<Die>().die();
 
     }
 
