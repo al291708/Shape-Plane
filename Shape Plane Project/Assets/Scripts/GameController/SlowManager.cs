@@ -66,6 +66,8 @@ public class SlowManager : MonoBehaviour {
                 if (slowTime < 0)
                 {
                     plane.GetComponent<ToyPlane>().setIsSlow(false);
+
+                    plane.GetComponent<ClockSounds>().StopSound();
                     slowTime = 5f;
                 }
 

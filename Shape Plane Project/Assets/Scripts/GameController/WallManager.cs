@@ -25,7 +25,7 @@ public class WallManager : MonoBehaviour {
 
         ratioOfSpawnWall = 7f;
 
-        velocityInitial = 0.8f;
+        velocityInitial = 0.4f;
         velocity = velocityInitial;
 
         countToAddVelocity = 0;

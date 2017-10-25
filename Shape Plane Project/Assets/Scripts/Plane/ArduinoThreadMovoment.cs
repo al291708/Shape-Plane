@@ -62,7 +62,7 @@ public class ArduinoThreadMovoment : MonoBehaviour {
 
         while (threadMove.IsAlive)
         {
-            Debug.Log("lee");
+            //Debug.Log("lee");
 
             string _readValueMove = _streamMove.ReadLine();
 

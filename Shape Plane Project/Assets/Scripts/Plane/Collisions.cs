@@ -80,6 +80,8 @@ public class Collisions : MonoBehaviour {
             
             other.gameObject.GetComponent<PowerUpsParticles>().showParticles();
 
+            GetComponentInChildren<ClockSounds>().playSouns();
+
             other.gameObject.SetActive(false);
 
             plane.setIsSlow(true);
@@ -89,8 +91,10 @@ public class Collisions : MonoBehaviour {
         {
 
             other.gameObject.GetComponent<PowerUpsParticles>().showParticles();
+            GetComponentInChildren<LlaveSounds>().playSouns();
 
             other.gameObject.SetActive(false);
+
 
             if (plane.getLifes() < 3)
             {
